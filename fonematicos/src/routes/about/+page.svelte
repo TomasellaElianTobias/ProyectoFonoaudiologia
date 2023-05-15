@@ -1,26 +1,79 @@
-<svelte:head>
-	<title>About</title>
-	<meta name="description" content="About this app" />
-</svelte:head>
-
-<div class="text-column">
-	<h1>About this app</h1>
-
-	<p>
-		This is a <a href="https://kit.svelte.dev">SvelteKit</a> app. You can make your own by typing the
-		following into your command line and following the prompts:
-	</p>
-
-	<pre>npm create svelte@latest</pre>
-
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
-	</p>
-
-	<p>
-		The <a href="/sverdle">Sverdle</a> page illustrates SvelteKit's data loading and form handling. Try
-		using it with JavaScript disabled!
-	</p>
-</div>
+<script>
+	let name = '';
+	let message = '';
+  
+	function handleSubmit() {
+	  if (name && message) {
+		alert(`Hola ${name}! Tu mensaje es: ${message}`);
+		name = '';
+		message = '';
+	  } else {
+		alert('Por favor, completa todos los campos');
+	  }
+	}
+  </script>
+  
+  <main>
+	<h1>Aplicación de Mensajes</h1>
+  
+	<form on:submit|preventDefault={handleSubmit}>
+	  <label>
+		Nombre:
+		<input type="text" bind:value={name} />
+	  </label>
+  
+	  <label>
+		Mensaje:
+		<textarea bind:value={message}></textarea>
+	  </label>
+  
+	  <button type="submit">Enviar</button>
+	</form>
+  </main>
+  
+  <style>
+	main {
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  padding: 2rem;
+	}
+  
+	h1 {
+	  margin-bottom: 1rem;
+	}
+  
+	form {
+	  display: flex;
+	  flex-direction: column;
+	  gap: 1rem;
+	  max-width: 400px;
+	}
+  
+	label {
+	  display: flex;
+	  flex-direction: column;
+	}
+  
+	input,
+	textarea {
+	  padding: 0.5rem;
+	  font-size: 1rem;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	}
+  
+	button {
+	  padding: 0.5rem 1rem;
+	  font-size: 1rem;
+	  background-color: #007bff;
+	  color: #fff;
+	  border: none;
+	  border-radius: 4px;
+	  cursor: pointer;
+	}
+  
+	button:hover {
+	  background-color: #0056b3;
+	}
+  </style>
