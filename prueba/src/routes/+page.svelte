@@ -1,134 +1,70 @@
 <script>
-	import { onMount } from 'svelte';
-    let APIURL ="http://localhost:3000/book";
-	let listBooks = [];
-	let nombre = '';
-	let edicion = '';
-	
-	onMount(() => {
-	    getBooks()  
-	});
+    import {onMount} from 'svelte';
+    import Header from '../components/Header.svelte';
+    let APIURL = "http://localhost:3000/paciente";
+    let listapacientes = [{nombre:'', edad:0, _id:''}]
 
-	async function getBooks(){
-		const res = await fetch(APIURL);
-		const books = await res.json();
-		listBooks = books;
-	}
-
-	async function addBook() {
-		let obj = { nombre, edicion };
-		const res = await fetch(APIURL, {
-			 method: 'POST',
-			 body: JSON.stringify(obj),
-			 headers:{
-                'Content-Type': 'application/json'
-               }
-			});
-		   console.log(await res.json());
-		   getBooks()
-		   clearInput() 
-	}
-
-	function clearInput(){
-	   nombre = '';
-	   edicion = '';
-	}
-
-	async function deleteBook(id){
-		const res = await fetch(APIURL+`/${id}`, { method: 'DELETE'});
-	    console.log(await res.json());  
-	    getBooks()         
-	}
+    onMount(async() => {
+        const res = await fetch(APIURL);
+        const pacientes = await res.json();
+        listapacientes = pacientes
+        console.log(listapacientes)
+    });
 
 </script>
 
-<main>
- 
-	<div>
-		<div class="form">
-			<input bind:value={nombre} placeholder="Nombre">
-			<input bind:value={edicion} placeholder="Edicion">
-			<button class="btn" on:click={addBook}>create</button>
-		</div>
-		
-		{#each listBooks as book}
-		<div class="card">
-			<p style="color:#000">{book.nombre} - {book.edicion}</p>
-			<button class="btn-delete" on:click={deleteBook(book._id)}>
-		 	delete</button>
-		</div>
-		 {:else}
-			<!-- this block renders when listBooks.length === 0 -->
-			<p>loading...</p>
-		{/each}
-	
-	</div>
+<head>
+    <title>Home</title>
+</head>
 
-</main>
+<header>
+    <Header></Header>
+</header>
+
+<body>
+    <h1>Bienvenido al apartado de pacientes</h1>
+    
+    <div class=contenedorPacientes>  
+            {#each listapacientes as paciente}
+            <div>
+                {#if paciente.edad != 0}
+                <a href={"/"+ paciente._id}>
+                    <button class="btn btn-secondary">
+                        {paciente.nombre} - {paciente.edad}
+                    </button> 
+                </a>     
+                {/if}
+            </div>
+            {:else}
+                <p>Sin respuesta...</p>
+            {/each}
+    </div>  
+    <a href="/CrearPaciente">
+        <button type="button" class="btn btn-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
+                <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/>
+            </svg>
+            Administrar Pacientes
+        </button>
+    </a>
+</body>
 
 <style>
-	main {
-		text-align: center;
-		padding: 1em;
-		max-width: 240px;
-		margin: 0 auto;
-	}
-
-	@media (min-width: 640px) {
-		main {
-			max-width: none;
-		}
-	}
-
-.btn {
-	 padding: 7px 32px;
-	 background-color:#9736DA;
-	 text-align: center;
-	 color:cornsilk;
-	 border-radius: 8px;
-	 font-size: 17px;
-	}
-
-.btn-delete{
-	padding: 7px 13px;
-	 background-color:crimson;
-	 text-align: center;
-	 color:cornsilk;
-	 border-radius: 8px;
-	 font-size: 17px;
-}	
-
-.btn:hover{
-	background-color: crimson;
-}	
-
-.card {
-  position: relative;
-  margin: auto;
-  height: 90px;
-  width: 240px;
-  text-align: center;
-  border-radius: 2px;
-  box-shadow: 0 6px 12px -3px rgba(0,0,0,.3);
-  color: #fff;
-  padding: 30px;
-}
-
-.card:hover{
-	height: 120px;
-    width: 340px;
-}
-
-.form{
-  margin: auto;
-  height: 110px;
-  width: 240px;
-  text-align: center;
-  border-radius: 4px;
-  box-shadow: 0 6px 12px -3px rgba(0,0,0,.3);
-  color: #fff;
-  padding: 30px;
-  margin-bottom: 20px;
-}
-
+    h1{
+        margin-top: 1em;
+    }
+    body{
+	  text-align: center;
+	  background: #e8f2fc;
+	  width: 100%;
+  	}
+    .contenedorPacientes{
+            width: auto;
+            text-align: center;
+            padding-top: 2em;
+            padding-bottom: 2em;
+        }
+    button{
+        margin: 0.5em;
+    }
 </style>
