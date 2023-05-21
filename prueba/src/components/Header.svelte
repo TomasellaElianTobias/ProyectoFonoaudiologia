@@ -1,6 +1,7 @@
 <header>
     <nav>
       <ul>
+        <!--Pestañas de arriba-->
         <li><a href="/">Home</a></li>
         <li><a href="/about">About</a></li>
       </ul>
@@ -9,7 +10,7 @@
 
 <style>
     header {
-      background-color: #0c6cfc ;
+      background-color: #4c0b4e ;
     }
   
     nav ul {
@@ -26,6 +27,6 @@
       display: inline-block;
       padding: 10px;
       text-decoration: none;
-      color:  #e1e6fc;
+      color:  rgb(253, 248, 248);
     }
   </style>

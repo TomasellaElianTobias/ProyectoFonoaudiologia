@@ -53,9 +53,6 @@
 	<Header></Header>
 </header>
 
-<header>
-    <Header></Header>
-</header>
 
 <body>
     <div class="contenedorCreacion">
@@ -63,14 +60,25 @@
         <input bind:value={nombre}>
         <label for="edad">Edad</label>
         <input bind:value={edad}>
-        <label for="direccion">Direccion</label>
+        
+        <!--Poner los videos en el dropdown-->
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown button
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
 
         <div class="centrado">
             <button class="btn btn-success" on:click={addPaciente}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
                 </svg>
-                Crear paciente
+                GUARDAR
             </button>
         </div>
     </div>
@@ -84,20 +92,19 @@
             <p>Sin respuesta</p>
         {/each}
     </div>
-
 </body>
 
 
 <style>
     body{
-	    background: #e8f2fc;
+	    background: #f7f8fa;
         margin: 2em;
         display: grid;
         justify-content: center;
         align-items: center;
   	}
     .contenedorCreacion{
-        border: 1px solid #ccc;
+        border: 1px solid #f0eded;
         background-color: #f2f2f2;
         width: fit-content;
         padding: 1em;
@@ -114,10 +121,11 @@
         text-align: center;
     }
     input{
-        width: 300px;
+        width: 500px;
     }
     button{
         margin-top: 1em;
         display: inline-block;
     }
+
 </style>
