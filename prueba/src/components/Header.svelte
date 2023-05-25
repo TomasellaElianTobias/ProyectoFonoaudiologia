@@ -9,10 +9,7 @@
   </header>
 
 <style>
-    header {
-      background-color: #4c0b4e ;
-    }
-  
+
     nav ul {
       list-style-type: none;
       margin: 0;
