@@ -13,7 +13,7 @@
       }
     </script>
     <head>
-      <title>Casita</title>
+      <title>Paciente</title>
     </head>
   
     <header>

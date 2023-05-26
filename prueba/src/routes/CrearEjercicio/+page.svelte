@@ -17,8 +17,9 @@
 
     }
   </script>
+  
   <head>
-    <title>Casita</title>
+	  <title>Administracion</title>
   </head>
 
   <header>

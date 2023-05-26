@@ -108,10 +108,10 @@
         display: grid;
     }
     .contenedorPacientes{
-            width: auto;
-            text-align: center;
-            padding-top: 2em;
-            padding-bottom: 2em;
+        width: auto;
+        text-align: center;
+        padding-top: 2em;
+        padding-bottom: 2em;
         }
     .centrado{
         text-align: center;

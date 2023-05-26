@@ -14,7 +14,7 @@
 </script>
 
 <head>
-    <title>Casita</title>
+    <title>Inicio</title>
 </head>
 
 <header>
