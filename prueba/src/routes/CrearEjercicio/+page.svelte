@@ -49,7 +49,9 @@
         Video guía:
         <input type="video" bind:value={video} />
       </label>
+      <a href="/CrearPaciente">
       <button type="submit">GUARDAR</button>
+      </a>
     </form>
   </main>
 </body>

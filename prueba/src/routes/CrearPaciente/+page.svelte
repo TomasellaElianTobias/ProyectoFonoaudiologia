@@ -4,10 +4,12 @@
 	import { onMount } from 'svelte';
 	import Header from '../../components/Header.svelte';
     let APIURL ="http://localhost:3000/paciente";
-	let listaPacientes = [{nombre:'', edad:0, _id:''}];
+	let listaPacientes = [{nombre:'', edad:0, Dni:'', Diagnostico:'', _id:''}];
 	let nombre = '';
 	let edad = 0;
-	
+	let Dni = '';
+    let Diagnostico = '';
+
 	onMount(() => {
 	    getPacientes()  
 	});
@@ -19,7 +21,7 @@
 	}
 
 	async function addPaciente() {
-		let obj = { nombre, edad };
+		let obj = { nombre, edad, Dni,Diagnostico};
 		const res = await fetch(APIURL, {
 			 method: 'POST',
 			 body: JSON.stringify(obj),
@@ -35,6 +37,8 @@
 	function clearInput(){
 	   nombre = '';
 	   edad = 0;
+       Dni = '';
+       Diagnostico = '';
 	}
 
 	async function deletePaciente(id){
@@ -60,18 +64,10 @@
         <input bind:value={nombre}>
         <label for="edad">Edad</label>
         <input bind:value={edad}>
-        
-        <!--Poner los videos en el dropdown-->
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Dropdown button
-            </button>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </div>
+        <label for="Dni">Dni</label>
+        <input bind:value={Dni}>
+        <label for="Diagnostico">Diagnostico</label>
+        <textarea bind:value={Diagnostico}></textarea>
 
         <div class="centrado">
             <button class="btn btn-success" on:click={addPaciente}>

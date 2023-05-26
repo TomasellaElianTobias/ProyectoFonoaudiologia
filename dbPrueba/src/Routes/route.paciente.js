@@ -9,8 +9,8 @@ const Paciente = require('../Model/paciente')
 })
 
 router.post('/paciente', async (req, res) => {
-   const { nombre, edad } = req.body
-   const paciente = new Paciente({nombre, edad })
+   const { nombre, edad, Dni, Diagnostico } = req.body
+   const paciente = new Paciente({nombre, edad, Dni, Diagnostico })
    const result = await paciente.save() 
    res.json({ msg: "paciente agregado", result });
 });
@@ -28,8 +28,8 @@ router.get('/paciente/:id', async (req, res) => {
 })
 
 router.put('/paciente', async (req, res) => {
-   const {id, nombre, edad } = req.body
-   const result = await Paciente.updateOne({_id:id}, {$set:{nombre, edad}})
+   const {id, nombre, edad, Dni, Diagnostico } = req.body
+   const result = await Paciente.updateOne({_id:id}, {$set:{nombre, edad, Dni, Diagnostico}})
    res.json({ msg: "Paciente actualizado", result})
 })
 

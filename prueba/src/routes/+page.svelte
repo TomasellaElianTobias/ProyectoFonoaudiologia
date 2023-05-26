@@ -26,22 +26,7 @@
         Bienvenido a Fonemáticos
         <img src="https://www.infantica.com/wp-content/uploads/2014/10/speech_therapy.png" alt="fono" height="100">
     </h3>
-    
-    <div class="contenedorPacientes">  
-        {#each listapacientes as paciente}
-        <div>
-            {#if paciente.edad != 0}
-            <a href={"/"+ paciente._id}>
-                <button class="btn btn-secondary">
-                    {paciente.nombre} - {paciente.edad}
-                </button> 
-            </a>     
-            {/if}
-        </div>
-        {:else}
-            <p>Sin respuesta...</p>
-        {/each}
-    </div>
+
     <div class="contenedor">
         <div class="bienvenido1">
             <a href="/UsuarioF">
@@ -78,12 +63,7 @@
         font-family: fantasy;
         background-color: white;
     }
-    .contenedorPacientes {
-        width: auto;
-        text-align: center;
-        padding-top: 0.5em;
-        padding-bottom: 0.5em;
-    }
+    
     button {
         margin: 0.5em;
     }
