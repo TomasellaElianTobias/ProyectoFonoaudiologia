@@ -17,7 +17,7 @@
 
     }
   </script>
-  
+
   <head>
 	  <title>Administracion</title>
   </head>
@@ -26,7 +26,7 @@
     <Header></Header>
   </header>
 
-<body>
+<div class="usuario">
   <h1>
     Fonoaudiólogos
   </h1>
@@ -55,7 +55,7 @@
       </a>
     </form>
   </main>
-</body>
+</div>
 
   
   <style>
@@ -84,7 +84,7 @@
       font-weight: 700;
     }
 
-    body{
+    div.usuario{
       background-color: #C8A2C8;
     }
     
@@ -98,7 +98,7 @@
       display: flex;
       flex-direction: column;
       margin-bottom: 1rem;
-      font-weight: 400;
+      font-weight: 700;
       font-family: 'Times New Roman', Times, serif;
       width: 100%;
     }
@@ -125,7 +125,6 @@
       background-color: purple;
       color: white;
       border: none;
-      cursor: pointer;
       font-weight: 700;
       display: block;
       justify-content: center;

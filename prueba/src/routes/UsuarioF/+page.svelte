@@ -16,11 +16,11 @@
     <title>Fonoaudiólogo</title>
   </head>
 
-  <header>
+  <div class="encabezado">
     <Header></Header>
-  </header>
+  </div>
 
-<body>
+<div class="usuario">
   <h1>
     Fonoaudiólogos
   </h1>
@@ -28,30 +28,41 @@
     <h2>INGRESE A SU CUENTA</h2>
 
     <form on:submit|preventDefault={register}>
-      <label>
-        Número de Documento:
-        <input type="text" bind:value={username} />
-      </label>
-      <label>
-        Contraseña:
-        <input type="password" bind:value={password} />
-      </label>
-      <a href="/CrearEjercicio">
-        <button type="submit">INGRESAR</button>
-      </a>
-      
+      <div class="contenedorCreacion">
+        <label>
+          Número de Documento:
+          <input type="text" bind:value={username} />
+        </label>
+        <label>
+          Contraseña:
+          <input type="password" bind:value={password} />
+        </label>
+        <a href="/VerPacientes">
+          <button type="submit">INGRESAR</button>
+        </a>
+        
+      </div>
     </form>
   </main>
-</body>
+</div>
 
   
   <style>
+    .contenedorCreacion{
+    border: 1px solid purple;
+    background-color: #C8A2C8;
+    padding: 1em;
+    border-radius: 10px;
+    display: grid;
+  }
+
     main {
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin: 2rem;
       padding: 5%;
+      margin-left: 100px;
+      margin-right: 100px;
       background-color: white;
       border-top-left-radius:15% 25%;
       border-bottom-left-radius:15% 25%;
@@ -61,8 +72,9 @@
 
     h1{
       text-align: center;
-      margin-top: 5%;
+      padding-top: 30px;
       color: purple;
+      background-color: #C8A2C8;
     }
 
     h2{
@@ -71,8 +83,10 @@
       font-weight: 700;
     }
 
-    body{
+    div.usuario{
       background-color: #C8A2C8;
+      margin-bottom: auto;
+      padding-bottom: 100%;
     }
     
     form {
@@ -108,7 +122,7 @@
       width: 100%;
     }
     
-    header{
+    div.encabezado{
         background-color: purple;
     }
   </style>
