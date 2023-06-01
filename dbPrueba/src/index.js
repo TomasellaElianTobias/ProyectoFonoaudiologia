@@ -11,6 +11,7 @@ app.use(cors())
 app.use(express.json())
 //rutas 
 app.use(require('./Routes/route.paciente'))
+app.use(require('./Routes/route.ejercicio'))
 
 app.listen(app.get('port'), () => {
    console.log(`listening localhost:${app.get('port')}`)

@@ -120,8 +120,7 @@
 
   div.usuario {
     background-color: rgba(197, 223, 210, 255);
-    margin-bottom: auto;
-    padding-bottom: 0;
+    padding-bottom: 100%;
   }
 
   form {

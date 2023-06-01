@@ -8,3 +8,4 @@ const EsquemaPaciente = Schema({
 })
 
 module.exports = model('pacientes',EsquemaPaciente)
+

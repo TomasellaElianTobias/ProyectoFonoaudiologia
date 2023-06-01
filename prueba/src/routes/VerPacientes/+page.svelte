@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
     import { onMount } from "svelte";
     import Header from "../../components/Header.svelte";
     let APIURL = "http://localhost:3000/paciente";
@@ -104,12 +106,12 @@
         border-bottom-left-radius: 15% 25%;
         border-top-right-radius: 15% 25%;
         border-bottom-right-radius: 15% 25%;
+        margin-bottom: 10%;
     }
 
     div.usuario {
         background-color: #c8a2c8;
-        margin-bottom: auto;
-        padding-bottom: 0;
+        padding-bottom: 100%;
     }
 
     button.CrearPaciente {

@@ -85,7 +85,6 @@
 
     div.usuario{
       background-color: #C8A2C8;
-      margin-bottom: auto;
       padding-bottom: 100%;
     }
     
