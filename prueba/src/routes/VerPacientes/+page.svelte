@@ -33,7 +33,7 @@
                 <div class="paciente">
                     {#if paciente.edad != 0}
                         <a href={"/" + paciente._id}>
-                            <button class="btn btn-secondary">
+                            <button>
                                 <p>Nombre y Apellido: {paciente.nombre}</p>
                                 <p>Nro de Documento: {paciente.Dni}</p>
                                 <p>Edad: {paciente.edad}</p>
@@ -42,8 +42,6 @@
                         </a>
                     {/if}
                 </div>
-            {:else}
-                <p>Sin respuesta...</p>
             {/each}
         </div>
         <div>
@@ -64,6 +62,17 @@
         width: 400px;
         height: 170px;
         background-color: purple;
+        color: white;
+        border-top-left-radius: 10% 15%;
+        border-bottom-left-radius: 15% 15%;
+        border-top-right-radius: 15% 15%;
+        border-bottom-right-radius: 15% 15%;
+        border: solid purple;
+    }
+
+    button:hover{
+        background-color: orange;
+        color: black;
     }
 
     div.contenedorPacientes {
@@ -125,6 +134,11 @@
         border-bottom-left-radius: 15% 15%;
         border-top-right-radius: 15% 15%;
         border-bottom-right-radius: 15% 15%;
-        border: #c8a2c8;
+        border: solid purple;
+    }
+
+    button.CrearPaciente:hover{
+        background-color: orange;
+        color: black;
     }
 </style>

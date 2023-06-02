@@ -98,9 +98,11 @@
     }
     .boton1:hover {
         background-color: orange;
+        color: black;
     }
     .boton2:hover {
         background-color: orange;
+        color: black;
     }
     .boton2 {
         background-color: rgb(13, 155, 13);

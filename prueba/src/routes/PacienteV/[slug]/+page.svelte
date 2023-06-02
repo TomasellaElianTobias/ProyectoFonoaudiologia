@@ -1,5 +1,5 @@
 <script>
-    import Header from "../../components/Header.svelte";
+    import Header from "../../../components/Header.svelte";
     import { onMount } from "svelte";
     import { page } from "$app/stores";
 
@@ -82,27 +82,6 @@
                         </div>
                     </div>
                 {/each}
-                <div class="col-4">
-                    <div class="contenedorCreacion">
-                        NUEVO EJERCICIO
-                        <a href="/CrearEjercicio?paciente={listapacientes._id}">
-                            <button type="submit">
-                                <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 448 512"
-                                >
-                                    <style>
-                                        svg {
-                                            fill: #fcfcfc;
-                                        }
-                                    </style><path
-                                        d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"
-                                    />
-                                </svg>
-                            </button>
-                        </a>
-                    </div>
-                </div>
             </div>
         </div>
     </main>
@@ -163,15 +142,5 @@
     div.usuario {
         background-color: #c8a2c8;
         padding-bottom: 100%;
-    }
-
-    button {
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
-        background-color: purple;
-        color: white;
-        border: none;
-        font-weight: 700;
-        width: 100%;
     }
 </style>

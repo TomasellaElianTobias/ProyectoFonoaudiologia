@@ -12,17 +12,10 @@
   let pacienteE;
   let mensajeE = false;
 
-  function register() {
-    // Aquí puedes agregar la lógica para enviar los datos del formulario al servidor
-    // y realizar el proceso de registro
-    console.log("Registro exitoso");
-    console.log("Nombre de usuario:", nombreP);
-    console.log("Nro De Documento:", DniP);
-  }
-
   async function UsuarioLogin() {
     const res = await fetch(APIURL);
     const pacientes = await res.json();
+    console.log(pacientes)
     listapacientes = pacientes;
     listapacientes.forEach((paciente) => {
       if (
@@ -37,7 +30,7 @@
       mensajeE = true;
     }
     else{
-      window.location.href = baseUrl + "about";
+      window.location.href = baseUrl + "PacienteV/" + pacienteE._id;
     }
     console.log(listapacientes);
     console.log(mensajeE,ingreso_e);
@@ -70,6 +63,9 @@
         <div class="centrado">
           <div>
             <button class="btn btn-success" type="submit" on:click={UsuarioLogin}>INGRESAR</button>
+            {#if mensajeE}
+            <p style="color: red">Error en los datos ingresados</p>
+            {/if}
           </div>
         </div>
       </div>

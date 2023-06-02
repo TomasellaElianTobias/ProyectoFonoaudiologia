@@ -90,21 +90,22 @@
                 </button>
             </div>
         </div>
-        <div class="contenedorPacientes">
-            {#each listapacientes as paciente}
-                <div>
-                    <button
-                        class="btn btn-primary"
-                        on:click={deletePaciente(paciente._id)}
-                    >
-                        Eliminar {paciente.nombre}</button
-                    >
-                </div>
-            {:else}
-                <p>Sin respuesta</p>
-            {/each}
-        </div>
     </main>
+    <div class="contenedorPacientes">
+        <h2>ELIMINAR PACIENTE</h2>
+        {#each listapacientes as paciente}
+            <div>
+                <button
+                    class="btn btn-primary"
+                    on:click={deletePaciente(paciente._id)}
+                >
+                    Eliminar {paciente.nombre}</button
+                >
+            </div>
+        {:else}
+            <p style="color: red; font-weight: 700;">NO SE AGREGO NINGUN PACIENTE</p>
+        {/each}
+    </div>
 </div>
 
 <style>
@@ -164,8 +165,20 @@ div.encabezado{
     .contenedorPacientes {
         width: auto;
         text-align: center;
-        padding-top: 2em;
-        padding-bottom: 2em;
+        display: flex;
+        flex-direction: column;
+        padding: 5%;
+        margin-left: 100px;
+        margin-right: 100px;
+        margin-top: 100px;
+        background-color: white;
+        border-top-left-radius: 15% 25%;
+        border-bottom-left-radius: 15% 25%;
+        border-top-right-radius: 15% 25%;
+        border-bottom-right-radius: 15% 25%;
+        justify-content: center;
+        align-items: center;
+
     }
     .centrado {
         text-align: center;
