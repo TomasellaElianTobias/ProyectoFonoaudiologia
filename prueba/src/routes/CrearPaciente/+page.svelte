@@ -152,7 +152,7 @@ div.encabezado{
 
     div.usuario {
         background: #c8a2c8;
-        padding-bottom: 100%;
+        padding-bottom: 25%;
     }
     .contenedorCreacion {
         border: 1px solid purple;

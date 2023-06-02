@@ -44,7 +44,7 @@
 </div>
 
 <div class="usuario">
-    <h1>Fonoaudiólogos</h1>
+    <h1>Paciente</h1>
     <main>
         <div class="container">
             <div class="row">
@@ -91,8 +91,8 @@
     h1 {
         text-align: center;
         padding-top: 30px;
-        color: purple;
-        background-color: #c8a2c8;
+        color: green;
+        background-color: rgba(197, 223, 210, 255);
     }
 
     h2 {
@@ -102,7 +102,7 @@
     }
 
     div.encabezado {
-        background-color: purple;
+        background-color: green;
     }
 
     iframe {
@@ -126,8 +126,8 @@
     }
 
     .contenedorCreacion {
-        border: 10px solid purple;
-        background-color: purple;
+        border: 10px solid green;
+        background-color: green;
         padding: 1em;
         border-radius: 10px;
         display: grid;
@@ -140,7 +140,7 @@
     }
 
     div.usuario {
-        background-color: #c8a2c8;
+        background-color: rgba(197, 223, 210, 255);
         padding-bottom: 100%;
     }
 </style>

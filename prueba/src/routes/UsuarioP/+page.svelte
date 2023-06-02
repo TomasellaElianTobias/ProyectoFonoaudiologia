@@ -64,7 +64,7 @@
           <div>
             <button class="btn btn-success" type="submit" on:click={UsuarioLogin}>INGRESAR</button>
             {#if mensajeE}
-            <p style="color: red">Error en los datos ingresados</p>
+            <p style="color: red; margin-top: 10%">Error en los datos ingresados</p>
             {/if}
           </div>
         </div>
@@ -116,7 +116,7 @@
 
   div.usuario {
     background-color: rgba(197, 223, 210, 255);
-    padding-bottom: 100%;
+    padding-bottom: 25%;
   }
 
   form {

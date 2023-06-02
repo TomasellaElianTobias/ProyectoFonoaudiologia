@@ -5,8 +5,6 @@
     let password = '';
   
     function register() {
-      // Aquí puedes agregar la lógica para enviar los datos del formulario al servidor
-      // y realizar el proceso de registro
       console.log('Registro exitoso');
       console.log('Nombre de usuario:', username);
       console.log('Contraseña:', password);
@@ -68,6 +66,7 @@
       border-bottom-left-radius:15% 25%;
       border-top-right-radius:15% 25%;
       border-bottom-right-radius:15% 25%;
+      margin-bottom: 0;
     }
 
     h1{
@@ -85,7 +84,7 @@
 
     div.usuario{
       background-color: #C8A2C8;
-      padding-bottom: 100%;
+      padding-bottom: 25%;
     }
     
     form {

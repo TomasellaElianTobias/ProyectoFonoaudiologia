@@ -110,7 +110,7 @@
 
   div.usuario {
     background-color: #c8a2c8;
-    padding-bottom: 100%;
+    padding-bottom: 25%;
   }
 
   form {
